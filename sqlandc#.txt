@@ -1,0 +1,169 @@
+createdb -U vladislavs Personal_data_management_system
+
+create table dzimums (
+dzimums_id serial Primary Key,
+kods int NOT NULL,
+nosaukums varchar(20) NOT NULL);
+\d dzimums;
+
+create table vecuma_grupa (
+vecuma_grupa_id serial Primary Key,
+vecums_no int NOT NULL,
+vecums_lidz int NOT NULL,
+kods int NOT NULL,
+nosaukums varchar(20) NOT NULL);
+
+create table nacionalitate(
+nacionalitate_id serial Primary Key,
+kods int NOT NULL,
+nosaukums varchar(20) NOT NULL,
+nacdzivesvieta_id int);
+
+create table deklareta_dzivesvieta(
+deklareta_dzivesvieta_id serial Primary Key,
+valsts varchar(30) NOT NULL,
+regions varchar(40) NOT NULL,
+pilseta varchar(30) NOT NULL,
+iela varchar(30) ,
+majas_numurs int,
+dzivokla_numurs int,
+dzivesvieta_id int);
+
+create table pilsoniba(
+pilsoniba_id serial Primary Key,
+nosaukums varchar(30) NOT NULL,
+kods int NOT NULL);
+
+create table invaliditate(
+invaliditate_id serial Primary Key,
+nosaukums varchar(30),
+kods int NOT NULL);
+
+create table profesija(
+profesija_id serial Primary Key,
+nosaukums varchar(50) NOT NULL,
+kods int NOT NULL,
+profesijas_grupa1 varchar(150) NOT NULL,
+profesijas_grupa2 varchar(150));
+
+create table izglitiba(
+izglitiba_id serial Primary Key,
+nosaukums varchar(30) NOT NULL,
+kods int NOT NULL,
+izglitibas_limena_grupa varchar(30) NOT NULL,
+izglitibas_veids varchar(30) NOT NULL,
+dokumenta_veids varchar(30) NOT NULL,
+dokumenta_izsneigsanas_datums date);
+
+create table persona(
+persona_id serial Primary Key,
+vards varchar(40) NOT NULL,
+uzvards varchar(40) NOT NULL,
+dzimsanas_datums date,
+mirsanas_datums date,
+id_dzimums int not null references dzimums(dzimums_id),
+id_vecuma_grupa int not null references vecuma_grupa(vecuma_grupa_id),
+id_nacionalitate int not null references nacionalitate(nacionalitate_id),
+id_deklareta_dzivesvieta int null references deklareta_dzivesvieta(deklareta_dzivesvieta_id),
+id_pilsoniba int null references pilsoniba(pilsoniba_id),
+id_invaliditate int null references invaliditate(invaliditate_id),
+id_profesija int null references profesija(profesija_id),
+id_izglitiba int null references izglitiba(izglitiba_id));
+
+create table personas_izglitiba(
+personas_izglitiba serial Primary Key,
+id_izglitiba int not null REFERENCES izglitiba(izglitiba_id),
+id_persona int not null REFERENCES persona(persona_id));
+
+create table personas_invaliditate(
+personas_invaliditate serial Primary Key,
+id_invaliditate int not null REFERENCES invaliditate(invaliditate_id),
+id_persona int not null REFERENCES persona(persona_id));
+
+insert into dzimums(kods, nosaukums)
+values('4744', 'sieviete'),
+('5435', 'virietis');
+
+
+insert into vecuma_grupa(vecums_no, vecums_lidz, kods, nosaukums)
+values ('0', '7', '4141', 'berns'),
+('7', '18', '5232', 'skolens'),
+('18', '24', '5289', 'students'),
+('24', '65', '9846', 'pieaugusais'),
+('65', '100', '5904', 'pensionars');
+
+insert into nacionalitate(kods, nosaukums,nacdzivesvieta_id )
+values ('2644', 'Eiropa',0),
+('4524', 'Asia',0),
+('4524', 'Amerika',0),
+('2644', 'Igaunija',1),
+('4147', 'Lietuva',1),
+('2421', 'latvija',1),
+('5841', 'Baltkrievija',1),
+('5841', 'Korea',2),
+('5841', 'Ķina',2),
+('5841', 'Japaņa',2),
+('5841', 'Canada',3);
+
+
+insert into deklareta_dzivesvieta(valsts, regions, pilseta, iela, majas_numurs, dzivokla_numurs,dzivesvieta_id)
+values ('latvija', 'zemgale', 'jelgava', 'pura cels', '19',null,11),
+('latvija', 'zemgale', 'jelgava', 'Puku iela', '5',32,11),
+('latvija', 'vidzeme', 'riga', 'Klusu iela', '55',11,11),
+('latvija', 'kurzeme', 'Liepaja', 'pulvera iela', '23',null,11),
+('latvija', 'latgale', 'daugavpils', 'latgales iela', '66',14,11),
+('Igaunija', ' ', 'tartu', 'tartuiela', '31',23,4),
+('Igaunija', ' ', 'Tallin', 'tallin iela', '22',31,4),
+('Ķina', ' ', 'Pekina', 'pekin iela', '13',54,8),
+('Canada', ' ', 'toronto', 'toronto iela', '17',98,10);
+
+
+
+insert into izglitiba(nosaukums, kods, izglitibas_limena_grupa, izglitibas_veids, dokumenta_veids, dokumenta_izsneigsanas_datums)
+values ('LLU', '3685', 'augstaka izglitiba', 'Profesianala izglitiba', 'diploms', '2017-12-29'),
+('RTU', '6449', 'augstaka izglitiba', 'Profesianala izglitiba', 'diploms', '2016-11-23'),
+('LU', '9770', 'augstaka izglitiba', 'Profesianala izglitiba', 'diploms', '2021-01-29'),
+('LJA', '2678', 'augstaka izglitiba', 'Profesianala izglitiba', 'diploms', '2006-06-26'),
+('RSU', '1289', 'augstaka izglitiba', 'Profesianala izglitiba', 'diploms', '2015-12-29');
+
+insert into profesija(nosaukums, kods, profesijas_grupa1, profesijas_grupa2)
+values ('Dekans', '9999', 'Vecākie speciālisti', null),
+('Pardavejs', '8696', 'Vienkarsas profesijas', null),
+('IT specialists', '3141', ' Specialisti', null),
+('Skolotajs', '7585', 'Specialisti', null),
+('Barmens', '5758', 'Pakalpojumu un tirdzniecibas darbinieki', null);
+
+insert into invaliditate(nosaukums, kods)
+values('pirma', 7442),
+('Otra', 9505),
+('Tresa', 8525),
+('Ceturta', 9636);
+
+insert into pilsoniba (nosaukums, kods)
+values ('latvijas', '6666'),
+('igauņu', '6674'),
+('lietuviesu', '9489'),
+('vacu', '6092'),
+('Krievijas', '9066');
+
+insert into persona(vards, uzvards, dzimsanas_datums, mirsanas_datums, id_dzimums, id_vecuma_grupa, id_nacionalitate, id_deklareta_dzivesvieta, id_pilsoniba, id_invaliditate, id_izglitiba, id_profesija)
+values ('Vladislavs', 'Mihailovs', '2001-06-27',null,2,3,2,1,1,null,1,3 ),
+('Edvards ', 'Berzinskis', '2002-09-11',null,2,3,2,2,1,null,2,3 ),
+('Ananda', 'Karasjovs', '1996-11-12',null,2,2,1,3,1,2,2,4 ),
+('Viktorija', 'Anisimova', '1999-08-28',null,1,4,1,4,1,2,3,2 ),
+('Jelizoveta', 'Kotova', '2005-04-24',null,1,5,1,1,5,1,4,5 );
+
+
+drop table personas_izglitiba;
+drop table personas_invaliditate;
+drop table persona;
+drop table dzimums;
+drop table vecuma_grupa ;
+drop table nacionalitate ;
+drop table deklareta_dzivesvieta;
+drop table pilsoniba;
+drop table invaliditate;
+drop table profesija;
+drop table izglitiba;
+
+
