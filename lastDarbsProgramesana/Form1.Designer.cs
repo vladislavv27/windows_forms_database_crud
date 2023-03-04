@@ -79,6 +79,13 @@ namespace lastDarbsProgramesana
             this.dataGridView10 = new System.Windows.Forms.DataGridView();
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.pilsoniba = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
             this.dataGridView9 = new System.Windows.Forms.DataGridView();
             this.dataGridView8 = new System.Windows.Forms.DataGridView();
             this.dataGridView7 = new System.Windows.Forms.DataGridView();
@@ -87,13 +94,6 @@ namespace lastDarbsProgramesana
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.button2 = new System.Windows.Forms.Button();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
-            this.pilsoniba = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.Persona.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -601,6 +601,69 @@ namespace lastDarbsProgramesana
             this.tabPage4.Text = "All tables";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(157, 264);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(57, 13);
+            this.label27.TabIndex = 5;
+            this.label27.Text = "invaliditate";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(437, 264);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(67, 13);
+            this.label26.TabIndex = 5;
+            this.label26.Text = "nacionalitate";
+            // 
+            // pilsoniba
+            // 
+            this.pilsoniba.AutoSize = true;
+            this.pilsoniba.Location = new System.Drawing.Point(796, 264);
+            this.pilsoniba.Name = "pilsoniba";
+            this.pilsoniba.Size = new System.Drawing.Size(48, 13);
+            this.pilsoniba.TabIndex = 5;
+            this.pilsoniba.Text = "pilsoniba";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(1112, 264);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(46, 13);
+            this.label24.TabIndex = 5;
+            this.label24.Text = "profesija";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(1154, 17);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(103, 13);
+            this.label23.TabIndex = 5;
+            this.label23.Text = "dikloreta dzivesvieta";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(689, 17);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(75, 13);
+            this.label22.TabIndex = 5;
+            this.label22.Text = "vecuma grupa";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(186, 17);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(41, 13);
+            this.label21.TabIndex = 5;
+            this.label21.Text = "izglitiba";
+            // 
             // dataGridView9
             // 
             this.dataGridView9.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -666,69 +729,6 @@ namespace lastDarbsProgramesana
             this.button2.Text = "update";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(186, 17);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(41, 13);
-            this.label21.TabIndex = 5;
-            this.label21.Text = "izglitiba";
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(689, 17);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(75, 13);
-            this.label22.TabIndex = 5;
-            this.label22.Text = "vecuma grupa";
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(1154, 17);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(103, 13);
-            this.label23.TabIndex = 5;
-            this.label23.Text = "dikloreta dzivesvieta";
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(1112, 264);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(46, 13);
-            this.label24.TabIndex = 5;
-            this.label24.Text = "profesija";
-            // 
-            // pilsoniba
-            // 
-            this.pilsoniba.AutoSize = true;
-            this.pilsoniba.Location = new System.Drawing.Point(796, 264);
-            this.pilsoniba.Name = "pilsoniba";
-            this.pilsoniba.Size = new System.Drawing.Size(48, 13);
-            this.pilsoniba.TabIndex = 5;
-            this.pilsoniba.Text = "pilsoniba";
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(437, 264);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(67, 13);
-            this.label26.TabIndex = 5;
-            this.label26.Text = "nacionalitate";
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(157, 264);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(57, 13);
-            this.label27.TabIndex = 5;
-            this.label27.Text = "invaliditate";
             // 
             // Form1
             // 
